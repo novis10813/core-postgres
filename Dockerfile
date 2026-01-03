@@ -1,9 +1,10 @@
 FROM postgres:17
 
-# Install build tools
+# Install build tools and ca-certificates for SSL
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     git \
+    ca-certificates \
     postgresql-server-dev-17 \
     && rm -rf /var/lib/apt/lists/*
 
